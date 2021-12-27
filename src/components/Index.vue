@@ -1,26 +1,27 @@
 <!--
  * @Author: 七画一只妖
- * @Date: 2021-12-27 14:59:06
+ * @Date: 2021-12-27 15:54:35
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2021-12-27 15:55:23
+ * @LastEditTime: 2021-12-27 15:54:35
  * @Description: file content
 -->
 <template>
   <div>
-    <Index></Index>
+      <h1>HelloWorld</h1>
   </div>
 </template>
 
 <script>
-import Index from './components/Index'
-
 export default {
-  name: 'App',
-  components: {
-    Index
-  }
+    name:"index",
+    data() {
+        return {
+            
+        }
+    },
 }
 </script>
 
 <style>
+
 </style>

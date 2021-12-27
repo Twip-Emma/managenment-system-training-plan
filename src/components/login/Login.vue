@@ -1,19 +1,17 @@
 <!--
  * @Author: 七画一只妖
- * @Date: 2021-12-27 15:54:35
+ * @Date: 2021-12-27 16:10:48
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2021-12-27 15:54:35
+ * @LastEditTime: 2021-12-27 16:10:48
  * @Description: file content
 -->
 <template>
-  <div>
-      <h1>HelloWorld</h1>
-  </div>
+  <div></div>
 </template>
 
 <script>
 export default {
-    name:"index",
+    name:"login",
     data() {
         return {
             

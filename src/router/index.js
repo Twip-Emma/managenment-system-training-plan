@@ -2,7 +2,7 @@
  * @Author: 七画一只妖
  * @Date: 2021-11-17 11:42:56
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2022-01-03 14:44:03
+ * @LastEditTime: 2022-01-03 15:22:50
  * @Description: file content
  */
 import Vue from 'vue'
@@ -14,7 +14,8 @@ import Register from '@/components/login/Register'
 import HomePage from '@/components/view/HomePage'
 import College from '@/components/view/College'
 import Sourse from '@/components/view/Sourse'
-import UserFrom from '@/components/college/UserFrom'
+import CollegeForm from '@/components/college/CollegeForm'
+import SourseForm from '@/components/sourse/SourseForm'
 
 
 const routes = [
@@ -42,15 +43,20 @@ const routes = [
         path: '/college',
         component: College,
         children: [{
-            name: 'AdminUserFrom',
-            path: "userForm",
-            component: UserFrom
+            name: 'CollegeForm',
+            path: "collegeForm",
+            component: CollegeForm
         }]
     },
     {
         name: "Sourse",
         path: '/sourse',
-        component: Sourse
+        component: Sourse,
+        children: [{
+            name: 'SourseForm',
+            path: "sourseForm",
+            component: SourseForm
+        }]
     }
 ]
 

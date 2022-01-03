@@ -28,18 +28,18 @@
             </template>
             <el-menu-item-group>
               <template slot="title">普通用户管理</template>
-              <el-menu-item index="1-1" @click="adminJumpTo('SourseFrom')"
+              <el-menu-item index="1-1" @click="adminJumpTo('SourseForm')"
                 >账号密码</el-menu-item
               >
-              <el-menu-item index="1-2" @click="adminJumpTo('SourseFrom')"
+              <el-menu-item index="1-2" @click="adminJumpTo('SourseForm')"
                 >标识设置</el-menu-item
               >
             </el-menu-item-group>
             <el-menu-item-group title="用户触发事件">
-              <el-menu-item index="1-3" @click="adminJumpTo('SourseFrom')"
+              <el-menu-item index="1-3" @click="adminJumpTo('SourseForm')"
                 >事件总览</el-menu-item
               >
-              <el-menu-item index="1-4" @click="adminJumpTo('SourseFrom')"
+              <el-menu-item index="1-4" @click="adminJumpTo('SourseForm')"
                 >响应标识</el-menu-item
               >
             </el-menu-item-group>
@@ -52,7 +52,7 @@
             </template>
             <el-menu-item-group>
               <template slot="title">博客管理</template>
-              <el-menu-item index="2-1" @click="adminJumpTo('SourseFrom')"
+              <el-menu-item index="2-1" @click="adminJumpTo('SourseForm')"
                 >博客列表</el-menu-item
               >
             </el-menu-item-group>
@@ -65,7 +65,7 @@
             </template>
             <el-menu-item-group>
               <template slot="title">普通用户管理</template>
-              <el-menu-item index="3-1" @click="adminJumpTo('SourseFrom')"
+              <el-menu-item index="3-1" @click="adminJumpTo('SourseForm')"
                 >账号密码</el-menu-item
               >
             </el-menu-item-group>
@@ -78,16 +78,16 @@
             </template>
             <el-menu-item-group>
               <template slot="title">用户动作</template>
-              <el-menu-item index="4-1" @click="adminJumpTo('SourseFrom')"
+              <el-menu-item index="4-1" @click="adminJumpTo('SourseForm')"
                 >请求监听</el-menu-item
               >
-              <el-menu-item index="4-2" @click="adminJumpTo('SourseFrom')"
+              <el-menu-item index="4-2" @click="adminJumpTo('SourseForm')"
                 >登录登出</el-menu-item
               >
-              <el-menu-item index="4-3" @click="adminJumpTo('SourseFrom')"
+              <el-menu-item index="4-3" @click="adminJumpTo('SourseForm')"
                 >昵称变更</el-menu-item
               >
-              <el-menu-item index="4-4" @click="adminJumpTo('SourseFrom')"
+              <el-menu-item index="4-4" @click="adminJumpTo('SourseForm')"
                 >头像变更</el-menu-item
               >
             </el-menu-item-group>

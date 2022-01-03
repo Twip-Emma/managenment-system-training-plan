@@ -2,7 +2,7 @@
  * @Author: 七画一只妖
  * @Date: 2021-12-27 16:10:48
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2022-01-03 09:01:31
+ * @LastEditTime: 2022-01-03 10:49:49
  * @Description: file content
 -->
 <template>
@@ -13,11 +13,23 @@
         <div class="d">
           <h1>登录/注册</h1>
           <!-- <input type="text" class="e" placeholder="user_name" /> -->
-          <input type="text" class="e" placeholder="user_id" />
-          <input type="password" class="e" placeholder="user_password" />
+          <input
+            type="text"
+            class="e"
+            placeholder="user_id"
+            v-model="userInfo.userCard"
+          />
+          <input
+            type="password"
+            class="e"
+            placeholder="user_password"
+            v-model="userInfo.userPass"
+          />
           <a @click="goToPage('Register')" href="#" class="f">点击注册</a>
           <!-- <el-button type="primary" icon="el-icon-search">搜索</el-button> -->
-          <el-button class="login"  type="primary">登录</el-button>
+          <el-button @click="userLogin(userInfo)" class="login" type="primary"
+            >登录</el-button
+          >
         </div>
       </div>
     </div>
@@ -25,28 +37,50 @@
 </template>
 
 <script>
+// import { mapActions } from "vuex";
 export default {
   data() {
     return {
-      
+      userInfo: {
+        userCard: "",
+        userPass: "",
+      },
+    };
+  },
+  methods: {
+    goToPage(target) {
+      this.$router.push({
+        name: target,
+      });
+    },
+    // ...mapActions("userLogin",{userLogin:"userLogin"})
+    userLogin(userInfo) {
+      let res = this.$store.dispatch("userLogin/userLogin", userInfo);
+      console.log(res);
+      if (res.code == 10000) {
+        this.$alert("你已成功登录，正在前往首页", "登陆成功！", {
+          confirmButtonText: "确定",
+        });
+        this.$router.push({
+          name: "HomePage",
+        });
+      } else {
+        this.$alert("请检查你的账号或密码", "登录失败！", {
+          confirmButtonText: "确定",
+        });
+      }
+    },
+
+  },
+  beforeCreate() {
+    console.log("前置方法被触发了");
+    let _ = this.$store.state.globalData.user;
+    if (_.userId != null) {
+      this.$router.push({
+        name: "HomePage",
+      });
     }
   },
-  methods:{
-    goToPage(target){
-      this.$router.push({
-        name:target
-      })
-    }
-  },
-  beforeCreate(){
-    console.log("前置方法被触发了")
-    let _ = this.$store.state.globalData.user
-    if(_.userId != null){
-      this.$router.push({
-        name:"HomePage"
-      })
-    }
-  }
 };
 </script>
 
@@ -127,7 +161,7 @@ export default {
   text-align: center;
 }
 
-.login{
-    width: 100%;
+.login {
+  width: 100%;
 }
 </style>

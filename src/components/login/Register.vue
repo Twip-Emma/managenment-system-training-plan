@@ -2,22 +2,42 @@
  * @Author: 七画一只妖
  * @Date: 2021-12-27 17:19:24
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2022-01-03 08:25:57
+ * @LastEditTime: 2022-01-03 10:51:23
  * @Description: file content
 -->
 <template>
-    <el-container class="out">
+  <el-container class="out">
     <div class="a">
       <div class="b"></div>
       <div class="c">
         <div class="d">
           <h1>登录/注册</h1>
-          <input type="text" class="e" placeholder="user_name" />
-          <input type="text" class="e" placeholder="user_id" />
-          <input type="password" class="e" placeholder="user_password" />
+          <input
+            type="text"
+            class="e"
+            placeholder="user_name"
+            v-model="userInfo.userName"
+          />
+          <input
+            type="text"
+            class="e"
+            placeholder="user_id"
+            v-model="userInfo.userCard"
+          />
+          <input
+            type="password"
+            class="e"
+            placeholder="user_password"
+            v-model="userInfo.userPass"
+          />
           <a @click="goToPage('Login')" href="#" class="f">返回注册界面</a>
           <!-- <el-button type="primary" icon="el-icon-search">搜索</el-button> -->
-          <el-button class="login"  type="primary">注册</el-button>
+          <el-button
+            class="login"
+            type="primary"
+            @click="userRegister(userInfo)"
+            >注册</el-button
+          >
         </div>
       </div>
     </div>
@@ -25,20 +45,50 @@
 </template>
 
 <script>
+// import { mapActions } from "vuex";
+
 export default {
-    data() {
-        return {
-            
-        }
+  data() {
+    return {
+      userInfo: {
+        userName: "",
+        userCard: "",
+        userPass: "",
+        userSex: "未设置",
+        userStage: 1,
+        userState: "在校",
+        userType: "学生",
+      },
+    };
+  },
+  methods: {
+    goToPage(target) {
+      this.$router.push({
+        name: target,
+      });
     },
-    methods:{
-        goToPage(target){
-            this.$router.push({
-                name:target
-            })
-        }
-    }
-}
+    // ...mapActions("userLogin",{userRegister:"userRegister"})
+    // userLogin(){
+    //     this.$store.userLogin.dispatch("userRegister")
+    // }
+    userRegister(userInfo) {
+      let res = this.$store.dispatch("userLogin/userRegister", userInfo)
+      console.log(res)
+      if(res.code == 10000){
+        this.$alert('恭喜你正式成为本站一员，正在前往首页', '注册成功！', {
+          confirmButtonText: '确定',
+        });
+        this.$router.push({
+          name:"HomePage"
+        })
+      }else{
+        this.$alert('这个账号被用过了，请重试', '注册失败！', {
+          confirmButtonText: '确定',
+        });
+      }
+    },
+  },
+};
 </script>
 
 <style>
@@ -118,7 +168,7 @@ export default {
   text-align: center;
 }
 
-.login{
-    width: 100%;
+.login {
+  width: 100%;
 }
 </style>

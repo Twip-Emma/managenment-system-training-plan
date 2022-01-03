@@ -14,11 +14,6 @@ export default {
     test() {
       console.log("在vuex里面，成功了")
     },
-    
-    //用户登录
-    userLoign(){
-      
-    }
   },
   mutations: {},
   state: {

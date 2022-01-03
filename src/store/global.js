@@ -2,7 +2,7 @@
  * @Author: 七画一只妖
  * @Date: 2021-11-20 23:22:54
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2022-01-03 09:13:03
+ * @LastEditTime: 2022-01-03 11:31:34
  * @Description: file content
  */
 
@@ -14,19 +14,18 @@ export default {
     test() {
       console.log("在vuex里面，成功了")
     },
+    changeUser(context, value){
+      context.commit("_changeUser",value)
+    }
   },
-  mutations: {},
+  mutations: {
+    _changeUser(state, value) {
+      state.user = value
+    }
+  },
   state: {
     user: {
-      // userId: "7438acfeuserf16euser47c0user9f28userbf6fe68b0437",
-      // userName: "七画一只妖",
-      // userSex: "男",
-      // userType: "学生",
-      // userStage: 1,
-      // userMark: null,
-      // userState: "在校",
-      // userCard: "111",
-      // userPass: "00b7691d86d96aebd21dd9e138f90840"
+
     }
   },
   getters: {}

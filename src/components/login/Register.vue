@@ -2,7 +2,7 @@
  * @Author: 七画一只妖
  * @Date: 2021-12-27 17:19:24
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2022-01-03 10:51:23
+ * @LastEditTime: 2022-01-03 11:33:44
  * @Description: file content
 -->
 <template>
@@ -71,21 +71,22 @@ export default {
     // userLogin(){
     //     this.$store.userLogin.dispatch("userRegister")
     // }
-    userRegister(userInfo) {
-      let res = this.$store.dispatch("userLogin/userRegister", userInfo)
-      console.log(res)
-      if(res.code == 10000){
-        this.$alert('恭喜你正式成为本站一员，正在前往首页', '注册成功！', {
-          confirmButtonText: '确定',
-        });
-        this.$router.push({
-          name:"HomePage"
-        })
-      }else{
-        this.$alert('这个账号被用过了，请重试', '注册失败！', {
-          confirmButtonText: '确定',
-        });
-      }
+    async userRegister(userInfo) {
+      this.$store.dispatch("userLogin/userRegister", userInfo).then((res) => {
+        if (res.code == 10000) {
+          this.$alert("恭喜你正式成为本站一员，正在前往首页", "注册成功！", {
+            confirmButtonText: "确定",
+          });
+          this.$store.dispatch("globalData/changeUser",res.data)
+          this.$router.push({
+            name: "HomePage",
+          });
+        } else {
+          this.$alert("这个账号被用过了，请重试", "注册失败！", {
+            confirmButtonText: "确定",
+          });
+        }
+      });
     },
   },
 };

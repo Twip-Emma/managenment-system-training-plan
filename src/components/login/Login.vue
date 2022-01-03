@@ -2,7 +2,7 @@
  * @Author: 七画一只妖
  * @Date: 2021-12-27 16:10:48
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2022-01-03 10:49:49
+ * @LastEditTime: 2022-01-03 11:33:31
  * @Description: file content
 -->
 <template>
@@ -54,23 +54,23 @@ export default {
       });
     },
     // ...mapActions("userLogin",{userLogin:"userLogin"})
-    userLogin(userInfo) {
-      let res = this.$store.dispatch("userLogin/userLogin", userInfo);
-      console.log(res);
-      if (res.code == 10000) {
-        this.$alert("你已成功登录，正在前往首页", "登陆成功！", {
-          confirmButtonText: "确定",
-        });
-        this.$router.push({
-          name: "HomePage",
-        });
-      } else {
-        this.$alert("请检查你的账号或密码", "登录失败！", {
-          confirmButtonText: "确定",
-        });
-      }
+    async userLogin(userInfo) {
+      this.$store.dispatch("userLogin/userLogin", userInfo).then((res) => {
+        if (res.code == 10000) {
+          this.$alert("你已成功登录，正在前往首页", "登陆成功！", {
+            confirmButtonText: "确定",
+          });
+          this.$store.dispatch("globalData/changeUser",res.data)
+          this.$router.push({
+            name: "HomePage",
+          });
+        } else {
+          this.$alert("请检查你的账号或密码", "登录失败！", {
+            confirmButtonText: "确定",
+          });
+        }
+      });
     },
-
   },
   beforeCreate() {
     console.log("前置方法被触发了");

@@ -2,7 +2,7 @@
  * @Author: 七画一只妖
  * @Date: 2021-12-27 16:10:48
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2022-01-03 08:23:20
+ * @LastEditTime: 2022-01-03 09:01:31
  * @Description: file content
 -->
 <template>
@@ -35,6 +35,15 @@ export default {
     goToPage(target){
       this.$router.push({
         name:target
+      })
+    }
+  },
+  beforeCreate(){
+    console.log("前置方法被触发了")
+    let _ = this.$store.state.globalData.user
+    if(_.userId != null){
+      this.$router.push({
+        name:"HomePage"
       })
     }
   }

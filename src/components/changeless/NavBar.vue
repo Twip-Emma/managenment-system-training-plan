@@ -2,7 +2,7 @@
  * @Author: 七画一只妖
  * @Date: 2021-12-27 16:18:44
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2021-12-27 16:22:43
+ * @LastEditTime: 2022-01-03 09:10:12
  * @Description: file content
 -->
 <template>
@@ -16,20 +16,17 @@
       text-color="#fff"
       active-text-color="#ffd04b"
     >
-      <el-menu-item class="el-menu-item_p" index="1" @click="pageSwitch('HomePage')"
+      <el-menu-item class="el-menu-item_p" index="1" @click="goToPage('HomePage')"
         >首页</el-menu-item
       >
-      <el-menu-item class="el-menu-item_p" index="2" @click="pageSwitch('Essay')"
-        >随笔</el-menu-item
+      <el-menu-item class="el-menu-item_p" index="2" @click="goToPage('Essay')"
+        >学院</el-menu-item
       >
-      <el-menu-item class="el-menu-item_p" index="3" @click="pageSwitch('Message')"
-        >留言</el-menu-item
+      <el-menu-item class="el-menu-item_p" index="3" @click="goToPage('Message')"
+        >选课</el-menu-item
       >
-      <el-menu-item class="el-menu-item_p" index="4" @click="pageSwitch('Project')"
-        >项目</el-menu-item
-      >
-      <el-menu-item class="el-menu-item_p" index="5" @click="pageSwitch('About')"
-        >关于</el-menu-item
+      <el-menu-item class="el-menu-item_p" index="4" @click="goToPage('About')"
+        >个人</el-menu-item
       >
       <el-menu-item class="el-menu-item_p-input">
         <el-input
@@ -59,16 +56,15 @@ export default {
     };
   },
   methods: {
-    pageSwitch(target) {
+    goToPage(target){
       this.$router.push({
-        name: target,
-        query: {},
-      });
+        name:target
+      })
     },
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
-    },
-  },
+    handleSelect(){
+      
+    }
+  }
 };
 </script>
 

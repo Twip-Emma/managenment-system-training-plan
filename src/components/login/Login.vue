@@ -2,7 +2,7 @@
  * @Author: 七画一只妖
  * @Date: 2021-12-27 16:10:48
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2021-12-27 17:13:54
+ * @LastEditTime: 2022-01-03 08:23:20
  * @Description: file content
 -->
 <template>
@@ -12,10 +12,10 @@
       <div class="c">
         <div class="d">
           <h1>登录/注册</h1>
-          <input type="text" class="e" placeholder="user_name" />
+          <!-- <input type="text" class="e" placeholder="user_name" /> -->
           <input type="text" class="e" placeholder="user_id" />
           <input type="password" class="e" placeholder="user_password" />
-          <a href="#" class="f">忘记密码？</a>
+          <a @click="goToPage('Register')" href="#" class="f">点击注册</a>
           <!-- <el-button type="primary" icon="el-icon-search">搜索</el-button> -->
           <el-button class="login"  type="primary">登录</el-button>
         </div>
@@ -25,7 +25,20 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      
+    }
+  },
+  methods:{
+    goToPage(target){
+      this.$router.push({
+        name:target
+      })
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -50,7 +63,9 @@ export default {};
 .b {
   width: 800px;
   height: 550px;
-  background-image: url("https://cdn.jsdelivr.net/gh/yuewuzhijian/sdorica-figure/e0002/e0002s5_figure.png");
+  /* background-image: url("https://cdn.jsdelivr.net/gh/yuewuzhijian/sdorica-figure/e0002/e0002s5_figure.png"); */
+  background-image: url("https://sdorica.yuewuzhijian.top/sdorica-figure-light/b0001/b0001s5_figure.webp");
+  /* https://sdorica.yuewuzhijian.top/sdorica-figure-light/b0001/b0001s5_figure.webp */
   /* 图片自适应 */
   background-size: cover;
 }

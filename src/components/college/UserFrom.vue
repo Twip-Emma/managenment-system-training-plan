@@ -2,7 +2,7 @@
  * @Author: 七画一只妖
  * @Date: 2021-11-20 17:04:10
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2021-11-20 21:15:18
+ * @LastEditTime: 2022-01-03 14:40:52
  * @Description: file content
 -->
 <template>
@@ -32,13 +32,6 @@ export default {
   data() {
     return {
       tableData: [{
-          linkName:"七画一只妖",
-          card:"root",
-          pass:"root",
-          passDes:"null",
-          createTime:"2021-11-20"
-      },
-      {
           linkName:"七画一只妖",
           card:"root",
           pass:"root",

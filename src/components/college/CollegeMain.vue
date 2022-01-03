@@ -2,7 +2,7 @@
  * @Author: 七画一只妖
  * @Date: 2021-11-20 16:41:35
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2022-01-03 11:45:25
+ * @LastEditTime: 2022-01-03 14:35:15
  * @Description: file content
 -->
 <template>
@@ -21,16 +21,16 @@ export default {
 
 <style scoped>
 .out {
-  border-color: red;
+  /* border-color: red; */
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .a{
-    width: 20%;
+    width: 25%;
 }
 
 .b{
-    width: 80%;
+    width: 75%;
 }
 </style>

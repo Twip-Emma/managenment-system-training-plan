@@ -2,13 +2,13 @@
  * @Author: 七画一只妖
  * @Date: 2021-11-20 16:42:13
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2021-11-20 21:13:42
+ * @LastEditTime: 2022-01-03 14:41:49
  * @Description: file content
 -->
 <template>
   <div>
     <el-row class="tac">
-      <el-col :span="24"
+      <el-col :span="100"
         ><div class="welcome"><h3>欢迎您，管理员</h3></div>
 
         <el-menu
@@ -123,13 +123,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 230px;
+  width: 250px;
   min-height: 800px;
 }
 
 .welcome {
   height: 40px;
+  text-align: center;
 }
 </style>

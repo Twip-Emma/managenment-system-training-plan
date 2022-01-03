@@ -2,7 +2,7 @@
  * @Author: 七画一只妖
  * @Date: 2021-11-17 11:42:56
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2022-01-03 11:42:47
+ * @LastEditTime: 2022-01-03 14:44:03
  * @Description: file content
  */
 import Vue from 'vue'
@@ -19,34 +19,37 @@ import UserFrom from '@/components/college/UserFrom'
 
 const routes = [
     {
-        name:"Login",
         path: '/',
         component: Login,
     },
     {
-        name:"Register",
+        name: "Login",
+        path: '/login',
+        component: Login,
+    },
+    {
+        name: "Register",
         path: '/register',
         component: Register
     },
     {
-        name:"HomePage",
-        path:'/homePage',
+        name: "HomePage",
+        path: '/homePage',
         component: HomePage
     },
     {
-        name:"College",
-        path:'/college',
+        name: "College",
+        path: '/college',
         component: College,
-        children:[            {
-            name:'AdminUserFrom',
-            path:"userForm",
-            component:UserFrom
-
+        children: [{
+            name: 'AdminUserFrom',
+            path: "userForm",
+            component: UserFrom
         }]
     },
     {
-        name:"Sourse",
-        path:'/sourse',
+        name: "Sourse",
+        path: '/sourse',
         component: Sourse
     }
 ]
@@ -54,7 +57,7 @@ const routes = [
 
 // 解决：重复点击路由报错
 const originalPush = VueRouter.prototype.push
-VueRouter.prototype.push = function push(location) {  
+VueRouter.prototype.push = function push(location) {
     return originalPush.call(this, location).catch(err => err)
 }
 

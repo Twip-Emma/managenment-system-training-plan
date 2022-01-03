@@ -2,7 +2,7 @@
  * @Author: 七画一只妖
  * @Date: 2021-12-27 17:19:24
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2022-01-03 11:33:44
+ * @LastEditTime: 2022-01-03 14:45:21
  * @Description: file content
 -->
 <template>
@@ -92,7 +92,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .out {
   display: flex;
   justify-content: center;

@@ -2,7 +2,7 @@
  * @Author: 七画一只妖
  * @Date: 2021-12-27 16:18:44
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2022-01-03 09:10:12
+ * @LastEditTime: 2022-01-03 11:46:13
  * @Description: file content
 -->
 <template>
@@ -19,10 +19,10 @@
       <el-menu-item class="el-menu-item_p" index="1" @click="goToPage('HomePage')"
         >首页</el-menu-item
       >
-      <el-menu-item class="el-menu-item_p" index="2" @click="goToPage('Essay')"
+      <el-menu-item class="el-menu-item_p" index="2" @click="goToPage('College')"
         >学院</el-menu-item
       >
-      <el-menu-item class="el-menu-item_p" index="3" @click="goToPage('Message')"
+      <el-menu-item class="el-menu-item_p" index="3" @click="goToPage('Sourse')"
         >选课</el-menu-item
       >
       <el-menu-item class="el-menu-item_p" index="4" @click="goToPage('About')"

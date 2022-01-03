@@ -2,7 +2,7 @@
  * @Author: 七画一只妖
  * @Date: 2021-11-17 11:42:56
  * @LastEditors: 七画一只妖
- * @LastEditTime: 2022-01-03 09:02:37
+ * @LastEditTime: 2022-01-03 11:42:47
  * @Description: file content
  */
 import Vue from 'vue'
@@ -12,6 +12,9 @@ import VueRouter from 'vue-router'
 import Login from '@/components/login/Login'
 import Register from '@/components/login/Register'
 import HomePage from '@/components/view/HomePage'
+import College from '@/components/view/College'
+import Sourse from '@/components/view/Sourse'
+import UserFrom from '@/components/college/UserFrom'
 
 
 const routes = [
@@ -27,8 +30,24 @@ const routes = [
     },
     {
         name:"HomePage",
-        path:'homePage',
+        path:'/homePage',
         component: HomePage
+    },
+    {
+        name:"College",
+        path:'/college',
+        component: College,
+        children:[            {
+            name:'AdminUserFrom',
+            path:"userForm",
+            component:UserFrom
+
+        }]
+    },
+    {
+        name:"Sourse",
+        path:'/sourse',
+        component: Sourse
     }
 ]
 
